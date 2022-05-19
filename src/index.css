@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(252, 243, 252);
+  align-items: center;
 }
 
 code {
@@ -19,9 +21,96 @@ code {
 }
 
 #header {
-  padding: 35px 0;
-  background-color: rgb(175, 11, 216);
+  padding: 30px 0;
+  background-color: rgb(132, 6, 163);
+}
+
+#dados-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 50px;
+}
+
+#userName {
+  background-color: white;
+  color: rgb(132, 6, 163);
+  padding: 17px 50px;
+  border-radius:30px;
+  border: 5px solid rgb(191, 120, 209);
+}
+
+#trybe-tunes {
+  color: white;
+  font-size: 3em;
+  font-weight: 600;
+}
+
+#links {
   color: white;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  margin-top: 2px;
+}
+
+.link {
+  text-decoration: none;
+  background-color: rgb(82, 2, 102);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.link:first-child {
+  margin-right: 2px;
+}
+
+.link:last-child {
+  margin-left: 2px;
+}
+
+.link:hover {
+  background-color: white;
+  color: rgb(82, 2, 102);
+}
+
+#login-page {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100vh;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+#login-trybetunes {
+  color:  rgb(132, 6, 163);
+  font-size: 5em;
+  margin-bottom: 150px;
+  margin-top: 0;
+}
+
+#login-input {
+  border-radius: 20px;
+  margin-bottom: 10px;
+  width: 50%;
+  height: 3%;
+  text-align: center;
+  border: 1px dashed rgb(132, 6, 163);
+  font-size: 18px;
+}
+
+#login-button {
+  width: 30%;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  height: 3%;
+  background-color: rgb(132, 6, 163);
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
 }

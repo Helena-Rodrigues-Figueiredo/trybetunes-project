@@ -39,8 +39,10 @@ class Login extends React.Component {
     console.log(this.props);
     const { isButtonDisabled, inputLenght, isLoading } = this.state;
     return isLoading ? <Loading /> : (
-      <div data-testid="page-login">
+      <div data-testid="page-login" id="login-page">
+        <h1 id="login-trybetunes">TrybeTunes</h1>
         <input
+          id="login-input"
           data-testid="login-name-input"
           placeholder="Nome"
           type="text"
@@ -49,6 +51,7 @@ class Login extends React.Component {
           value={ inputLenght }
         />
         <button
+          id="login-button"
           type="submit"
           data-testid="login-submit-button"
           disabled={ isButtonDisabled }

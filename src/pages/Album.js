@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import getMusics from '../services/musicsAPI';
+// import addSong from '../services/favoriteSongsAPI';
 import MusicCard from '../components/MusicCard';
 import Header from '../components/Header';
 
@@ -10,6 +11,11 @@ class Album extends React.Component {
     artistName: '',
     albumName: '',
     image: '',
+  }
+
+  favoriteSongs = async () => {
+    const { musicas } = this.state;
+    console.log(musicas);
   }
 
   componentDidMount = () => {
