@@ -17,3 +17,11 @@ code {
   display: flex;
   justify-content: center;
 }
+
+#header {
+  padding: 35px 0;
+  background-color: rgb(175, 11, 216);
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+}

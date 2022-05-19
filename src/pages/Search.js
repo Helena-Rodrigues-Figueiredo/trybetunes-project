@@ -32,7 +32,6 @@ class Search extends React.Component {
     const { inputArtistLenght } = this.state;
     const albums = await searchAlbumsAPI(inputArtistLenght);
     const nome = inputArtistLenght;
-    console.log(albums);
     this.setState({
       inputArtistLenght: '',
       albumsArtist: albums,

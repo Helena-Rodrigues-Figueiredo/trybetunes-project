@@ -24,12 +24,13 @@ class Header extends React.Component {
       const { isLoading, userName } = this.state;
       return (
         <>
-          <div>
+          <div id="header">
             { isLoading
               ? <Loading /> : (
                 <header data-testid="header-component">
                   <div data-testid="header-user-name">
-                    <p>{ userName }</p>
+                    <span>TrybeTunes</span>
+                    <span id="userName">{ `Olá, ${userName}` }</span>
                   </div>
                 </header>
               ) }
