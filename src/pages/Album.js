@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import getMusics from '../services/musicsAPI';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 import MusicCard from '../components/MusicCard';
 import Header from '../components/Header';
 import Loading from './Loading';
@@ -18,6 +18,7 @@ class Album extends React.Component {
 
   componentDidMount = () => {
     this.listOfMusics();
+    this.getFavorites();
   }
 
   listOfMusics = async () => {
@@ -41,7 +42,7 @@ class Album extends React.Component {
     const { musicas } = this.state;
     const trackIdChecked = event.target.attributes.trackId.value;
     const stringToNumber = parseInt(trackIdChecked, 10);
-    const objectTrackId = musicas.filter((track) => track.trackId === stringToNumber);
+    const objectTrackId = musicas.find((track) => track.trackId === stringToNumber);
     this.setState({
       isLoading: true,
     });
@@ -50,6 +51,22 @@ class Album extends React.Component {
       isLoading: false,
       checked: [...prevState.checked, stringToNumber],
     }));
+  }
+
+  getFavorites = async () => {
+    const { match } = this.props;
+    const { params } = match;
+    const { id } = params;
+    const musics = await getMusics(id);
+    const funcGetFavoritesSongs = await getFavoriteSongs();
+    const excludesFirstElement = musics.filter((track) => track.trackId);
+    const filterTrackIdLocalStorage = funcGetFavoritesSongs.map((item) => item.trackId);
+    const filterTrackIdMusics = excludesFirstElement.map((item) => item.trackId);
+    const checkedElements = filterTrackIdLocalStorage.filter((item) => filterTrackIdMusics
+      .includes(item));
+    this.setState({
+      checked: checkedElements,
+    });
   }
 
   render() {

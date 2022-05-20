@@ -114,3 +114,9 @@ code {
   font-weight: 600;
   font-size: 20px;
 }
+
+#loading {
+  color:  rgb(82, 2, 102);
+  text-align: center;
+  font-size: 2em;
+}
