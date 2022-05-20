@@ -120,3 +120,29 @@ code {
   text-align: center;
   font-size: 2em;
 }
+
+#search-input-button {
+  text-align: center;
+  margin-top: 15px;
+}
+
+#search-input {
+  border-radius: 10px;
+  border: 1px solid  rgb(132, 6, 163);;
+  width: 500px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+#search-button {
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: rgb(252, 243, 252);
+}
+
+#search-button:hover {
+  background-color: rgb(82, 2, 102);
+  color: white;
+  cursor: pointer;
+}

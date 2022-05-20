@@ -51,14 +51,16 @@ class Search extends React.Component {
     return (
       <div data-testid="page-search">
         <Header />
-        <div>
+        <div id="search-input-button">
           <input
+            id="search-input"
             data-testid="search-artist-input"
             placeholder="Nome do Artista"
             onChange={ this.valueInputArtist }
             value={ inputArtistLenght }
           />
           <button
+            id="search-button"
             type="submit"
             data-testid="search-artist-button"
             disabled={ isButtonDisabled }
