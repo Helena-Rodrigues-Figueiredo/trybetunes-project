@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import getMusics from '../services/musicsAPI';
-// import addSong from '../services/favoriteSongsAPI';
+import { addSong } from '../services/favoriteSongsAPI';
 import MusicCard from '../components/MusicCard';
 import Header from '../components/Header';
+import Loading from './Loading';
 
 class Album extends React.Component {
   state = {
@@ -11,11 +12,8 @@ class Album extends React.Component {
     artistName: '',
     albumName: '',
     image: '',
-  }
-
-  favoriteSongs = async () => {
-    const { musicas } = this.state;
-    console.log(musicas);
+    isLoading: false,
+    checked: [],
   }
 
   componentDidMount = () => {
@@ -39,8 +37,23 @@ class Album extends React.Component {
     });
   }
 
+  favoriteSong = async (event) => {
+    const { musicas } = this.state;
+    const trackIdChecked = event.target.attributes.trackId.value;
+    const stringToNumber = parseInt(trackIdChecked, 10);
+    const objectTrackId = musicas.filter((track) => track.trackId === stringToNumber);
+    this.setState({
+      isLoading: true,
+    });
+    await addSong(objectTrackId);
+    this.setState((prevState) => ({
+      isLoading: false,
+      checked: [...prevState.checked, stringToNumber],
+    }));
+  }
+
   render() {
-    const { musicas, artistName, albumName, image } = this.state;
+    const { musicas, artistName, albumName, image, isLoading, checked } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
@@ -48,13 +61,18 @@ class Album extends React.Component {
         <img src={ image } alt={ albumName } />
         <p data-testid="artist-name">{artistName}</p>
         <p data-testid="album-name">{ albumName }</p>
-        {musicas.map(({ trackName, previewUrl, trackId }) => (
-          <MusicCard
-            key={ trackId }
-            musicName={ trackName }
-            player={ previewUrl }
-          />
-        ))}
+        {isLoading ? <Loading /> : (
+          musicas.map(({ trackName, previewUrl, trackId }) => (
+            <MusicCard
+              key={ trackId }
+              musicName={ trackName }
+              player={ previewUrl }
+              trackId={ trackId }
+              onClick={ this.favoriteSong }
+              checked={ checked.includes(trackId) }
+            />
+          ))
+        )}
       </div>
     );
   }

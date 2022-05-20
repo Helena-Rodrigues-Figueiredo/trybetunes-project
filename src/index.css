@@ -100,7 +100,7 @@ code {
   width: 50%;
   height: 3%;
   text-align: center;
-  border: 1px dashed rgb(132, 6, 163);
+  border: 1px solid rgb(132, 6, 163);
   font-size: 18px;
 }
 
