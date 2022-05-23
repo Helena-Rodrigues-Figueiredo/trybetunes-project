@@ -58,6 +58,7 @@ class Search extends React.Component {
             placeholder="Nome do Artista"
             onChange={ this.valueInputArtist }
             value={ inputArtistLenght }
+            autoComplete="off"
           />
           <button
             id="search-button"
@@ -69,23 +70,36 @@ class Search extends React.Component {
             Pesquisar
           </button>
         </div>
-        <div>
+        <div id="message-search">
           { message && albumsArtist
-            .length !== 0 ? `Resultado de álbuns de: ${name}` : ''}
-          { albumsArtist.length === 0 ? 'Nenhum álbum foi encontrado'
+            .length !== 0
+            ? (
+              <p id="results-albuns">
+                {`Resultado de álbuns de: ${name}`}
+              </p>
+            )
+            : ''}
+        </div>
+        <div id="all-albuns">
+          { albumsArtist.length === 0 && message
+            ? (
+              <p id="no-found-album">Nenhum álbum foi encontrado</p>
+            )
             : (albumsArtist
               .map(({ collectionName, collectionId, artworkUrl100, artistName }) => (
-                <div key={ collectionId }>
+                <div key={ collectionId } className="album-search">
                   <img src={ artworkUrl100 } alt={ collectionName } />
                   <p
                     key={ collectionId }
+                    className="collection-name"
                   >
                     { collectionName }
                   </p>
-                  <p>{ artistName }</p>
+                  <p className="artist-name">{ artistName }</p>
                   <Link
                     to={ `/album/${collectionId}` }
                     data-testid={ `link-to-album-${collectionId}` }
+                    className="go-to-album-button"
                   >
                     Ir para o album
                   </Link>

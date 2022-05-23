@@ -49,6 +49,7 @@ class Login extends React.Component {
           name="inputName"
           onChange={ this.valueInput }
           value={ inputLenght }
+          autoComplete="off"
         />
         <button
           id="login-button"

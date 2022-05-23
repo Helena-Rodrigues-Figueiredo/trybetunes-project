@@ -75,21 +75,27 @@ class Album extends React.Component {
       <div data-testid="page-album">
         <Header />
         <br />
-        <img src={ image } alt={ albumName } />
-        <p data-testid="artist-name">{artistName}</p>
-        <p data-testid="album-name">{ albumName }</p>
-        {isLoading ? <Loading /> : (
-          musicas.map(({ trackName, previewUrl, trackId }) => (
-            <MusicCard
-              key={ trackId }
-              musicName={ trackName }
-              player={ previewUrl }
-              trackId={ trackId }
-              onClick={ this.favoriteSong }
-              checked={ checked.includes(trackId) }
-            />
-          ))
-        )}
+        <div id="album-artist-collection">
+          <img src={ image } alt={ albumName } />
+          <div id="artist-collection">
+            <p data-testid="artist-name" id="artist-name">{artistName}</p>
+            <p data-testid="album-name" id="album-name">{ albumName }</p>
+          </div>
+        </div>
+        <div id="sound-track">
+          {isLoading ? <Loading /> : (
+            musicas.map(({ trackName, previewUrl, trackId }) => (
+              <MusicCard
+                key={ trackId }
+                musicName={ trackName }
+                player={ previewUrl }
+                trackId={ trackId }
+                onClick={ this.favoriteSong }
+                checked={ checked.includes(trackId) }
+              />
+            ))
+          )}
+        </div>
       </div>
     );
   }

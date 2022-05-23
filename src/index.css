@@ -146,3 +146,82 @@ code {
   color: white;
   cursor: pointer;
 }
+
+.album-search {
+  width: 18%;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: rgb(244, 233, 255);
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
+
+#all-albuns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.go-to-album-button {
+  text-decoration: none;
+  background-color: rgb(82, 2, 102);
+  color: white;
+  padding: 5px;
+  border-radius: 15px;
+  font-size: 15px;
+}
+
+.artist-name {
+  font-weight: 600;
+}
+
+.collection-name {
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+#results-albuns {
+  text-align: center;
+  font-size: 25px;
+}
+
+.name-and-audio {
+  text-align: center;
+  width: 40%;
+  margin-bottom: 15px;
+  background-color: rgb(244, 233, 255);
+  border-radius: 10px;
+}
+
+#sound-track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.music-name {
+  font-weight: 600;
+}
+
+.favorite { 
+  margin-top: 5px;
+}
+
+#album-artist-collection {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#artist-collection {
+  text-align: center;
+  font-weight: 600;
+}
+
+#artist-name {
+  font-size: 30px;
+  margin-bottom: 3px;
+}
+
+#album-name {
+  font-size: 18px;
+  margin-top: 5px;
+}

@@ -5,8 +5,8 @@ class MusicCard extends React.Component {
   render() {
     const { musicName, player, trackId, checked, onClick } = this.props;
     return (
-      <div>
-        <p>{ musicName }</p>
+      <div className="name-and-audio">
+        <p className="music-name">{ musicName }</p>
         <audio data-testid="audio-component" src={ player } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento
@@ -14,6 +14,7 @@ class MusicCard extends React.Component {
             audio
           </code>
         </audio>
+        <br />
         <label htmlFor={ musicName }>
           <input
             type="checkbox"
@@ -22,6 +23,7 @@ class MusicCard extends React.Component {
             trackId={ trackId }
             onClick={ onClick }
             checked={ checked }
+            className="favorite"
           />
           Favorita
         </label>
