@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import getMusics from '../services/musicsAPI';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import MusicCard from '../components/MusicCard';
 import Header from '../components/Header';
 import Loading from './Loading';
@@ -39,18 +39,34 @@ class Album extends React.Component {
   }
 
   favoriteSong = async (event) => {
-    const { musicas } = this.state;
+    const { musicas, checked } = this.state;
     const trackIdChecked = event.target.attributes.trackId.value;
     const stringToNumber = parseInt(trackIdChecked, 10);
     const objectTrackId = musicas.find((track) => track.trackId === stringToNumber);
-    this.setState({
-      isLoading: true,
-    });
-    await addSong(objectTrackId);
-    this.setState((prevState) => ({
-      isLoading: false,
-      checked: [...prevState.checked, stringToNumber],
-    }));
+    const musicIsAlreadyChecked = checked.some((music) => music === objectTrackId
+      .trackId);
+    const deleteMusic = checked.filter((music) => music !== objectTrackId.trackId);
+    console.log('delete', deleteMusic);
+    console.log('MusicAlready', musicIsAlreadyChecked);
+    if (musicIsAlreadyChecked === false) {
+      this.setState({
+        isLoading: true,
+      });
+      await addSong(objectTrackId);
+      this.setState((prevState) => ({
+        isLoading: false,
+        checked: [...prevState.checked, stringToNumber],
+      }));
+    } else {
+      this.setState({
+        isLoading: true,
+      });
+      await removeSong(objectTrackId);
+      this.setState({
+        isLoading: false,
+        checked: deleteMusic,
+      });
+    }
   }
 
   getFavorites = async () => {
