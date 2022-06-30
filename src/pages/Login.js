@@ -36,7 +36,6 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { isButtonDisabled, inputLenght, isLoading } = this.state;
     return isLoading ? <Loading /> : (
       <div data-testid="page-login" id="login-page">
