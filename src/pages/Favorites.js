@@ -27,9 +27,13 @@ class Favorites extends React.Component {
     const track = Number(target.attributes.trackId.value);
     const trackRemoved = returnApi.find((element) => element.trackId === track);
     const tracksNotRemoved = returnApi.filter((element) => element.trackId !== track);
+    this.setState({
+      isLoading: true,
+    });
     await removeSong(trackRemoved);
     this.setState({
       returnApi: tracksNotRemoved,
+      isLoading: false,
     });
   }
 

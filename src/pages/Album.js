@@ -46,8 +46,6 @@ class Album extends React.Component {
     const musicIsAlreadyChecked = checked.some((music) => music === objectTrackId
       .trackId);
     const deleteMusic = checked.filter((music) => music !== objectTrackId.trackId);
-    console.log('delete', deleteMusic);
-    console.log('MusicAlready', musicIsAlreadyChecked);
     if (musicIsAlreadyChecked === false) {
       this.setState({
         isLoading: true,
