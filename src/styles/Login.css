@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Permanent+Marker&family=Poppins&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 480px) {
+  body {
+    overflow: hidden;
+  }
+
+  .login-title {
+    text-align: center;
+    margin-top: 2rem;
+    font-family: Amatic SC;
+    font-size: 4em;
+  }
+
+  #login-page {
+    width: 80%;
+    height: 37.5rem;
+    margin: 4.3rem auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #login-page input {
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    height: 22px;
+    width: 70vw;
+    padding: 14px 30px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-family: poppins;
+  }
+
+  #login-page input::placeholder {
+    color: rgb(191, 188, 194);
+  }
+
+  #login-page input:focus::placeholder {
+    color: white;
+  }
+
+  #login-page .input-container {
+    position: relative;
+  }
+
+  #login-page button {
+    border: none;
+    border-radius: 50px;
+    height: 35px;
+    width: 70vw;
+    background-color: rgb(248, 221, 69);
+    color: white;
+    font-weight: 600;
+    font-family: poppins;
+  }
+
+  #dancing-people-img {
+    margin-top: 7rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    background-color: yellow;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    background-color: red;
+  }
+}
+
+@media (min-width: 1025px) {
+  body {
+    background-color: blue;
+  }
+}
