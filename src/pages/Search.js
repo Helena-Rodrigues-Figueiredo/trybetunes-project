@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 // import Loading from './Loading';
 import Header from '../components/Header';
-// import '../styles/Search.css';
+import '../styles/Search.css';
 
 class Search extends React.Component {
   state = {
@@ -56,7 +56,7 @@ class Search extends React.Component {
           <input
             id="search-input"
             data-testid="search-artist-input"
-            placeholder="Nome do Artista"
+            placeholder="O que você quer ouvir?"
             onChange={ this.valueInputArtist }
             value={ inputArtistLenght }
             autoComplete="off"
