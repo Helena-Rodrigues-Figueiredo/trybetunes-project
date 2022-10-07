@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Permanent+Marker&family=Poppins&display=swap');
+
+
+#header {
+    background-color:rgb(248, 221, 69);
+    height: 20vh;
+        color: white;
+}
+
+@media (max-width: 480px) {
+    #dados-header {
+        height: 20vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    #userName {
+        background-color: white;
+        color: rgb(100, 77, 105);;
+        padding: 1px 50px;
+        border-radius: 30px;
+        border: 2px solid rgb(132, 12, 212);;
+        font-family: poppins;
+        font-size: 1em;
+      }
+      
+      #trybe-tunes {
+        color: white;
+        font-family: Amatic SC;
+        font-size: 4em;
+        font-weight: 600;
+      }
+}
+
+#links {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2px;
+    font-family: poppins;
+  }
+  
+  .link {
+    text-decoration: none;
+    background-color: rgb(82, 2, 102);
+    color: white;
+    font-size: 1rem;
+    font-weight: 100;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 10px 10px;
+  }
+  
+  .link:first-child {
+    margin-right: 2px;
+  }
+  
+  .link:last-child {
+    margin-left: 2px;
+  }
+  
+  .link:hover {
+    background-color: white;
+    color: rgb(82, 2, 102);
+  }

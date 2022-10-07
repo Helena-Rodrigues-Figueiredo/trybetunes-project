@@ -21,7 +21,7 @@
   #login-page {
     width: 80%;
     height: 37.5rem;
-    margin: 4.3rem auto 0;
+    margin: 8vh auto 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,24 +64,19 @@
   }
 
   #dancing-people-img {
-    margin-top: 7rem;
+    position: fixed;
+    bottom: 0;
   }
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
-  body {
-    background-color: yellow;
-  }
+@media (min-height: 800px) {
+   #login-page {
+    margin: 12vh auto 0;
+   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  body {
-    background-color: red;
-  }
-}
-
-@media (min-width: 1025px) {
-  body {
-    background-color: blue;
+@media (max-height: 700px) {
+  #login-page {
+   margin: 6vh auto 0;
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Loading from '../pages/Loading';
 import { getUser } from '../services/userAPI';
+import '../styles/Header.css';
 
 class Header extends React.Component {
     state = {
@@ -27,7 +28,7 @@ class Header extends React.Component {
           <div id="header">
             { isLoading
               ? <Loading /> : (
-                <header data-testid="header-component">
+                <header data-testid="header-component" id="name-and-title">
                   <div data-testid="header-user-name" id="dados-header">
                     <span id="trybe-tunes">TrybeTunes</span>
                     <span id="userName">{ `Olá, ${userName}` }</span>
