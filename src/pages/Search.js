@@ -89,21 +89,27 @@ class Search extends React.Component {
             : (albumsArtist
               .map(({ collectionName, collectionId, artworkUrl100, artistName }) => (
                 <div key={ collectionId } className="album-search">
-                  <img src={ artworkUrl100 } alt={ collectionName } />
-                  <p
-                    key={ collectionId }
-                    className="collection-name"
-                  >
-                    { collectionName }
-                  </p>
-                  <p className="artist-name">{ artistName }</p>
-                  <Link
-                    to={ `/album/${collectionId}` }
-                    data-testid={ `link-to-album-${collectionId}` }
-                    className="go-to-album-button"
-                  >
-                    Ir para o album
-                  </Link>
+                  <img
+                    src={ artworkUrl100 }
+                    alt={ collectionName }
+                    className="album-img"
+                  />
+                  <div className="album-description">
+                    <p
+                      key={ collectionId }
+                      className="collection-name"
+                    >
+                      { collectionName }
+                    </p>
+                    <p className="artist-name">{ artistName }</p>
+                    <Link
+                      to={ `/album/${collectionId}` }
+                      data-testid={ `link-to-album-${collectionId}` }
+                      className="go-to-album-button"
+                    >
+                      Ir para o album
+                    </Link>
+                  </div>
                 </div>
               )))}
         </div>

@@ -1,40 +1,88 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 @media (max-width: 480px) {
-    #search-input-button {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-top: 1rem;
-    }
+  #search-input-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
 
-    #search-input {
-      position: relative;
-      width: 55vw;
-      display: inline-block;
-      height: 3.5vh;
-      border: 1px solid rgb(248, 221, 69);
-      border-radius: 25px 0 0 25px;
-      outline: none;
-      padding: 0 25px;
-      color: rgb(82, 2, 102);
-    }
+  #search-input {
+    position: relative;
+    width: 55vw;
+    display: inline-block;
+    height: 3.5vh;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+    padding: 0 25px;
+    color: rgb(82, 2, 102);
+    font-family: poppins;
+  }
 
-    #search-button {
-      position: relative;
-      border-radius: 0 25px 25px 0;
-      width: 20vw;
-      height: 3.5vh;
-      border: none;
-      outline: none;
-      background-color:rgb(248, 221, 69);
-      color: white;
-      font-weight: 900;
-    }
+  #search-button {
+    position: relative;
+    border-radius: 0 25px 25px 0;
+    width: 20vw;
+    height: 3.5vh;
+    border: none;
+    outline: none;
+    background-color: rgb(248, 221, 69);
+    color: white;
+    font-weight: 900;
+    font-family: poppins;
+  }
+
+  #all-albuns {
+    display: flex;
+    width: 95%;
+    margin: 4vh auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    font-family: poppins;
+  }
+
+  .album-search {
+    margin-bottom: 1vh;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 13px rgb(82, 2, 102);
+    font-size: 15px;
+  }
+
+  .go-to-album-button {
+    border-radius: 25px;
+    width: 35vw;
+    padding: 3px 5px;
+    height: 3vh;
+    border: none;
+    outline: none;
+    background-color: rgb(82, 2, 102);
+    color: white;
+    font-family: poppins;
+    font-size: 12px;
+    text-decoration: none;
+  }
+
+  .collection-name {
+    font-size: 13px;
+  }
+
+  .artist-name {
+    font-weight: 900;
+  }
+
+  #results-albuns {
+    display: none;
+  }
 }
 
 /* @media (min-width: 481px) and (max-width: 768px) {
