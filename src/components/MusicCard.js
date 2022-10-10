@@ -7,7 +7,12 @@ class MusicCard extends React.Component {
     return (
       <div className="name-and-audio">
         <p className="music-name">{ musicName }</p>
-        <audio data-testid="audio-component" src={ player } controls>
+        <audio
+          data-testid="audio-component"
+          className="audio-component"
+          src={ player }
+          controls
+        >
           <track kind="captions" />
           O seu navegador não suporta o elemento
           <code>
@@ -25,7 +30,7 @@ class MusicCard extends React.Component {
             checked={ checked }
             className="favorite"
           />
-          Favorita
+          Favoritar
         </label>
       </div>
     );
