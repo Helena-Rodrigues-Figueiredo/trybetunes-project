@@ -30,7 +30,7 @@ class MusicCard extends React.Component {
             checked={ checked }
             className="favorite"
           />
-          Favoritar
+          Favorita
         </label>
       </div>
     );

@@ -1,0 +1,13 @@
+#profile {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 5rem;
+    align-items: center;
+}
+
+#profile-image {
+    border-radius: 50%;
+}
+

@@ -34,6 +34,9 @@
     border: none;
     background-color: rgb(82, 2, 102, 0.1);
     padding: 10px 0;
+    text-align: center;
+    width: 90%;
+    margin: 1rem auto;
 }
 
 .music-name {
@@ -43,6 +46,7 @@
 
 .audio-component {
     height: 2.5rem;
+    width: 90%;
 }
 
 .favorite {

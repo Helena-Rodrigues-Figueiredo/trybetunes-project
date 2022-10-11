@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
+import '../styles/Profile.css';
 
 class Profile extends React.Component {
 state = {
@@ -26,11 +27,12 @@ render() {
       { userData === null
         ? <Loading />
         : (
-          <div>
+          <div id="profile">
             <img
               src={ userData.image }
               alt="foto-usuario"
               data-testid="profile-image"
+              id="profile-image"
             />
             <h1>{ userData.name }</h1>
             <p>{ userData.email }</p>
