@@ -4,7 +4,7 @@ Esse projeto foi realizado durante o curso da Trybe, no módulo de Front-end. O 
 pelo nome do artista, do álbum ou da música, ouvir as músicas e favoritá-las. A aplicação foi feita usando o React e utilizando a API do Itunes
 para obter as informações das músicas.
 
-Link para a aplicação: xxx
+Link para a aplicação: [TrybeTunes](trybetunes-h.surge.sh)
 
 ## Demonstração
 
