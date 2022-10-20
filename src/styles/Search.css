@@ -49,14 +49,15 @@
   }
 
   .album-search {
-    margin-bottom: 1vh;
     display: flex;
     flex-direction: column;
     width: 45%;
     padding: 10px 15px;
+    margin-bottom: 1vh;
     border-radius: 15px;
     box-shadow: 1px 1px 13px rgb(82, 2, 102);
-    font-size: 15px;
+    font-size: 15px; 
+    justify-content: space-between;
   }
 
   .go-to-album-button {
@@ -68,7 +69,6 @@
     outline: none;
     background-color: rgb(82, 2, 102);
     color: white;
-    font-family: poppins;
     font-size: 12px;
     text-decoration: none;
   }

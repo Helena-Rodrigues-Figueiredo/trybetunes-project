@@ -102,14 +102,14 @@ class Search extends React.Component {
                       { collectionName }
                     </p>
                     <p className="artist-name">{ artistName }</p>
-                    <Link
-                      to={ `/album/${collectionId}` }
-                      data-testid={ `link-to-album-${collectionId}` }
-                      className="go-to-album-button"
-                    >
-                      Ir para o album
-                    </Link>
                   </div>
+                  <Link
+                    to={ `/album/${collectionId}` }
+                    data-testid={ `link-to-album-${collectionId}` }
+                    className="go-to-album-button"
+                  >
+                    Ir para o album
+                  </Link>
                 </div>
               )))}
         </div>
