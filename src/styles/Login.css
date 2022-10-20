@@ -66,3 +66,27 @@ body {
   position: fixed;
   bottom: 0;
 }
+
+@media (min-width: 769px) {
+  #login-page button {
+    width: 50vw;
+  }
+
+  #login-page input {
+    width: 50vw;
+  }
+}
+
+@media (min-width: 1201px) {
+  #login-page button {
+    width: 35vw;
+  }
+
+  #login-page input {
+    width: 35vw;
+  }
+
+  #login-page {
+    margin: 10vh auto 0;
+  }  
+}
